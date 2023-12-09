@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace, sans-serif;
+}
+
+:root {
+    --primary-color: red;
+    --accent-color: #21212e;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+body {
+    width: 100%;
+    max-width: 2000px;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1em 5em;
+    padding-top: 1.5em;
+    background-color: white;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: var(--primary-color);
+}
+
+.logo-img {
+    width: 100px;
+    height: 60px;
+}
+
+.hide-desktop {
+    display: none;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+}
+
+.nav-item {
+    padding: 1em;
+}
+
+.nav-link {
+    color: var(--accent-color);
+    transition: 300ms all ease ;
+}
+
+.nav-item:hover .nav-link {
+    text-decoration: underline;
+}
+
+.nav-item.primary {
+    background-color: var(--primary-color);
+    border-radius: 15px;
+}
+
+.nav-item.primary .nav-link{
+    color: white;
+}
+
+.hero {
+    padding: 5em 5.5em;
+    min-height: calc(100vh - 10em);
+    width: 100%;
+
+    background: url('./Assets/truck2.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: cover;
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    position: relative;
+
+}
+
+.hero h1, .hero p {
+    width: 65%;
+    /* color: white; */
+}
+
+.main-headline {
+    font-size: 36px;
+    color: white;
+    line-height: 1.5em;
+}
+
+.main-headline span.colored {
+    color: var(--primary-color);
+}
+
+.supporting-tagline {
+    color: rgb(196, 196, 196);
+    font-weight: 200;
+    width: 60% !important;
+    line-height: 1.5em;
+}
+
+.cta {
+    padding: 1.5em 2em;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background-color: var(--primary-color);
+    color: white;
+    transition: 300ms all ease-in-out;
+}
+
+.cta:hover {
+    border: 1px solid var(--primary-color);
+    background-color: var(--accent-color);
+    cursor: pointer;
+}
+
+.hero .cta {
+    margin-top: 3em;
+    max-width: 300px;
+}
+
+.service-pop {
+    width: 50%;
+    position: relative;
+}
+
+.red-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    background-color: var(--primary-color);
+}
+
+.services-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: var(--accent-color); */
+    padding: 1.5em 3em;
+    color: var(--accent-color);
+    align-items: center;
+    /* font-size: 13px; */
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 999;
+
+
+}
+
+.service-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+.services-list .icon {
+    width: 40px;
+    height: 40px;
+    color: white;
+}
+
+
+@media screen and (max-width: 860px) {
+
+    .hero {
+        text-align: center;
+    }
+    .main-headline {
+        width: 100% !important;
+    }
+
+    .supporting-tagline {
+        width: 70% !important;
+        margin: 0 auto;
+    }
+
+    .cta {
+        margin: 3em auto
+    }
+
+}
+
+@media screen and (max-width: 720px) {
+    .show-mobile {
+        display: block;
+    }
+
+    header i {
+        font-size: 2em;
+        cursor: pointer;
+    }
+
+    .nav-list {
+        display: none;
+    }
+}
