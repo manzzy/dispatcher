@@ -8,6 +8,7 @@
 :root {
     --primary-color: red;
     --accent-color: #21212e;
+    --accent-color-var: #7a7a85;
 }
 
 ul {
@@ -42,6 +43,7 @@ header {
     justify-content: center;
     gap: 5px;
     color: var(--primary-color);
+    text-align: center;
 }
 
 .logo-img {
@@ -85,7 +87,6 @@ header {
     padding: 5em 5.5em;
     min-height: calc(100vh - 10em);
     width: 100%;
-
     background: url('./Assets/truck2.jpg');
     background-repeat: no-repeat;
     background-position: bottom right;
@@ -95,7 +96,12 @@ header {
     flex-direction: column;
     gap: .5em;
     position: relative;
+}
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    
 }
 
 .hero h1, .hero p {
@@ -142,14 +148,16 @@ header {
 }
 
 .service-pop {
-    width: 50%;
+    width: 65%;
     position: relative;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .red-bg {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -20px;
+    left: -20px;
     width: 50%;
     height: 50%;
     background-color: var(--primary-color);
@@ -159,7 +167,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* background-color: var(--accent-color); */
+    background-color: var(--accent-color-var);
     padding: 1.5em 3em;
     color: var(--accent-color);
     align-items: center;
