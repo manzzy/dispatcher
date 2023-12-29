@@ -519,6 +519,11 @@ footer .copy {
 
     .info-top {
         padding: 1em 2em;
+        gap: 1em;
+    }
+
+    .info-top .container {
+        gap: 1rem;
     }
 
     header {
@@ -554,6 +559,9 @@ footer .copy {
         padding-right: 1.5em;
     }
 
+    body.no-scroll {
+        overflow-y: hidden;
+    }
     .close-icon {
         font-size: 20px;
         color: var(--primary-color);
@@ -562,5 +570,31 @@ footer .copy {
 
     .hide-mobile {
         display: none;
+    }
+
+    .third-section .container {
+        flex-direction: column-reverse;
+    }
+    .contact .container, footer .container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 760px){
+    .service-process ul {
+        flex-direction: column;
+        width: 50%;
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 690px) {
+    .bg-red ul {
+        flex-direction: column;
+    }
+
+    .bg-red ul li, .bg-red ul li img {
+        width: 100%;
+        height: auto;
     }
 }
