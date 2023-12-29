@@ -9,6 +9,7 @@
     --primary-color: red;
     --accent-color: #21212e;
     --accent-color-var: #7a7a85;
+    --padding-xl: 5em 5.5em;
 }
 
 ul {
@@ -123,7 +124,7 @@ header {
 }
 
 .hero {
-    padding: 5em 5.5em;
+    padding: var(--padding-xl);
     min-height: calc(100vh - 10em);
     width: 100%;
     background: url('./Assets/truck2.jpg');
@@ -234,7 +235,7 @@ header {
 }
 
 section {
-    padding: 5em 5.5em;
+    padding: var(--padding-xl);
 }
 
 .third-section .container {
@@ -443,7 +444,7 @@ form input, textarea {
 }
 
 footer {
-    padding: 5em 5.5em;
+    padding: var(--padding-xl);
     background-color: var(--accent-color);
     color: white;
     padding-bottom: 1em;
@@ -507,6 +508,59 @@ footer .copy {
     }
 
     .nav-list {
+        display: none;
+    }
+}
+
+@media (max-width: 1004px){
+    :root {
+        --padding-xl: 3em 3.5em
+    }
+
+    .info-top {
+        padding: 1em 2em;
+    }
+
+    header {
+        padding: 1em 2em;
+    }
+}
+
+@media (max-width: 865px){
+    .show-mobile {
+        display: block;
+    }
+
+    .menu-open-icon {
+        font-size: 20px;
+        cursor: pointer;
+        color: var(--accent-color);
+    }
+
+    .nav-list.active {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100svh;
+        background-color: white;
+        color: var(--accent-color);
+        padding: 2em 3em;
+        width: 70%;
+        z-index: 99;
+        align-items: flex-end;
+        padding-right: 1.5em;
+    }
+
+    .close-icon {
+        font-size: 20px;
+        color: var(--primary-color);
+        cursor: pointer;
+    }
+
+    .hide-mobile {
         display: none;
     }
 }
