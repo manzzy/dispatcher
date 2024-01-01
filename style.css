@@ -3,6 +3,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: monospace, sans-serif;
+    transition: background-color 1000ms ease;
+    /* transition: color 100ms ease; */
 }
 
 :root {
@@ -10,6 +12,18 @@
     --accent-color: #21212e;
     --accent-color-var: #7a7a85;
     --padding-xl: 5em 5.5em;
+    --header-bg: #ffffff;
+
+    --text-color: #21212e;
+    --bg-color: white;
+}
+
+body.dark-mode {
+    --header-bg: #21212e;
+    --black: #ffffff;
+
+    --text-color: white;
+    --bg-color: #21212e;
 }
 
 ul {
@@ -25,6 +39,25 @@ body {
     width: 100%;
     max-width: 2000px;
     margin: 0 auto;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+section {
+    border-bottom: 1px solid var(--text-color);
+}
+
+.scrl-hidden {
+    opacity: 0;
+    filter: blur(3px);
+    transform: translateX(-10%);
+    transition: all 1s;
+}
+
+.show-scrl {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0%);
 }
 
 .info-top {
@@ -42,11 +75,16 @@ body {
 }
 
 .info-top a {
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
     cursor: pointer;
     transition: 300ms all ease;
 }
+
+body .info-top a{
+    --text-color: white;
+}
+
 
 .info-top i {
     color: var(--primary-color);
@@ -63,7 +101,7 @@ header {
 
     padding: 1em 5em;
     padding-top: 1.5em;
-    background-color: white;
+    background-color: var(--header-bg);
     position: sticky;
     top: 0;
     left: 0;
@@ -71,6 +109,8 @@ header {
     border-bottom: 1px solid var(--primary-color);
     box-shadow: 0px 1px 1px 0px var(--primary-color);
 }
+
+
 
 .logo {
     display: flex;
@@ -103,10 +143,18 @@ header {
 
 .nav-item {
     padding: 1em;
+   
+}
+
+.nav-item.theme {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
 }
 
 .nav-link {
-    color: var(--accent-color);
+    color: var(--text-color);
     transition: 300ms all ease ;
 }
 
@@ -120,7 +168,7 @@ header {
 }
 
 .nav-item.primary .nav-link{
-    color: white;
+    color: var(--text-color);
 }
 
 .hero {
@@ -146,12 +194,12 @@ header {
 
 .hero h1, .hero p {
     width: 65%;
-    /* color: white; */
+    /* color: var(--white); */
 }
 
 .main-headline {
     font-size: 36px;
-    color: white;
+    color: white; /* Doesn't need to change with the color modes */
     line-height: 1.5em;
 }
 
@@ -172,7 +220,7 @@ header {
     border: none;
     outline: none;
     background-color: var(--primary-color);
-    color: white;
+    color: var(--white);
     transition: 300ms all ease-in-out;
 }
 
@@ -231,7 +279,7 @@ header {
 .services-list .icon {
     width: 40px;
     height: 40px;
-    color: white;
+    color: var(--white);
 }
 
 section {
@@ -254,7 +302,7 @@ section {
 
 .text-sec .headline {
     background-color: var(--primary-color);
-    color: white;
+    color: var(--white);
     padding: 5px 10px;
     max-width: 100px;
     text-align: center;
@@ -263,7 +311,7 @@ section {
 }
 
 .text-sec p {
-    color: var(--accent-color);
+    color: var(--text-color);
     opacity: .8;
     font-size: 14px;
 }
@@ -286,6 +334,7 @@ img.boxes {
     text-align: center;
     background-color: var(--primary-color);
     color: white;
+    border: none;
 }
 
 .bg-red .container {
@@ -321,8 +370,8 @@ img.boxes {
 
 .bg-red ul li {
     /* flex: 1; */
-    background-color: white;
-    color: var(--accent-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
     /* padding-bottom: 1em; */
 }
 
@@ -334,7 +383,7 @@ img.boxes {
 
 .bg-red ul li h5 {
     padding: 10px;
-    background-color: white;
+    background-color: var(--bg-color);
     font-size: 16px;
 }
 
@@ -429,7 +478,7 @@ form input, textarea {
     padding: 10px;
     width: 100%;
     border-radius: 10px;
-    border: 1px solid #dfdfdf
+    border: 1px solid #dfdfdf;
 }
 
 .sub-btn {
@@ -513,7 +562,7 @@ footer .copy {
 }
 
 @media (max-width: 1004px){
-    :root {
+    body {
         --padding-xl: 3em 3.5em
     }
 
@@ -539,7 +588,7 @@ footer .copy {
     .menu-open-icon {
         font-size: 20px;
         cursor: pointer;
-        color: var(--accent-color);
+        color: var(--text-color);
     }
 
     .nav-list.active {
@@ -550,8 +599,8 @@ footer .copy {
         top: 0;
         right: 0;
         height: 100svh;
-        background-color: white;
-        color: var(--accent-color);
+        background-color: var(--bg-color);
+        color: var(--text-color);
         padding: 2em 3em;
         width: 70%;
         z-index: 99;
@@ -578,6 +627,10 @@ footer .copy {
     .contact .container, footer .container {
         flex-direction: column;
     }
+
+    .contact form {
+        width: 100%;
+    }
 }
 
 @media (max-width: 760px){
@@ -596,5 +649,11 @@ footer .copy {
     .bg-red ul li, .bg-red ul li img {
         width: 100%;
         height: auto;
+    }
+}
+
+@media (max-width: 475px){
+    body {
+        --padding-xl: 1.5em 2em 
     }
 }
